@@ -3,6 +3,9 @@ const resolvers = {
     async link(root, { id }, { models }) {
       return models.Link.findByPk(id);
     },
+    async links(root, args, { models }) {
+      return models.Link.findAll();
+    },
   },
   Mutation: {
     async createLink(root, { url, slug }, { models }) {

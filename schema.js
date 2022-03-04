@@ -9,6 +9,7 @@ const typeDefs = gql`
 
   type Query {
     link(id: Int!): Link
+    links: [Link!]!
   }
 
   type Mutation {
