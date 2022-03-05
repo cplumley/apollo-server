@@ -1,13 +1,3 @@
-const { Sequelize, Op, Model, DataTypes } = require('@sequelize/core');
-const sequelize = new Sequelize('sqlite::memory');
-
-const Link = sequelize.define('link', {
-  slug: {
-    allowNull: false,
-    unique: true,
-  },
-});
-
 const resolvers = {
   Query: {
     async link(root, { id }, { models }) {
