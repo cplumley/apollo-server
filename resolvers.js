@@ -11,7 +11,7 @@ const resolvers = {
     async createLink(root, { url, slug }, { models }) {
       return models.Link.create({
         url,
-        slug,
+        slug: slug || Math.random().toString(20).slice(2),
       });
     },
   },
