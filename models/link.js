@@ -16,7 +16,21 @@ module.exports = (sequelize, DataTypes) => {
       url: DataTypes.STRING,
       slug: {
         type: DataTypes.STRING,
-        validate: { unique: true },
+        allowNull: false,
+        unique: {
+          args: true,
+          msg: "Slug must be unique"
+        },
+        validate: {
+          isAlphanumeric: {
+            args: true,
+            msg: 'Must be alphanumeric'
+          },
+          len: {
+            args: [4],
+            msg: 'Must be more than 4 characters'
+          },
+        }
       },
     },
     {
